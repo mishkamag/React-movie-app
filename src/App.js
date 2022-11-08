@@ -1,4 +1,5 @@
 import "./App.css";
+import Movies from "./components/Movies";
 import SearchBar from "./components/SearchBar";
 
 const API_KEY = "api_key=2723edd8d09f41a378e963267ca9061b";
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <SearchBar />
+      <Movies />
     </div>
   );
 }
