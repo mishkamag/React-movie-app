@@ -1,27 +1,37 @@
-import classes from "./Movies.module.css";
+import { useEffect, useState } from "react";
+import Cart from "./Cart";
+
+const API_KEY = "api_key=2723edd8d09f41a378e963267ca9061b";
+const BASE_URL = "https://api.themoviedb.org/3";
+const API_URL = BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
+const IMG_URL = "https://image.tmdb.org/t/p/w500";
+const searchURL = BASE_URL + "/search/movie?" + API_KEY;
 
 const Movies = () => {
-  return (
-    <main className={classes.main}>
-      <div className={classes.movie}>
-        <img
-          src="https://images.unsplash.com/photo-1518173835740-f5d14111d76a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1vdmllJTIwc2VhdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-          alt="movie seating"
-        />
-        <div className={classes.movieInfo}>
-          <h3>Movie Title</h3>
-          <span className={classes.green}>9.8</span>
-        </div>
-        <div className={classes.overview}>
-          <h3>Overview</h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-          doloremque id corporis voluptas. Quo ex culpa cumque facilis totam at
-          molestias laudantium cupiditate, laborum inventore? Nemo nobis
-          inventore aliquid accusantium.
-        </div>
-      </div>
-    </main>
-  );
+  const [movieArr, setMovieArr] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.results);
+        setMovieArr(data.results);
+      });
+  }, []);
+
+  //   if (!movieArr) return null;
+
+  const movieCarts = movieArr.map((movie) => {
+    const { title, poster_path, overview } = movie;
+    <Cart
+      key={Math.random()}
+      src={IMG_URL + poster_path}
+      alt={title}
+      overview={overview}
+    />;
+  });
+
+  return movieCarts;
 };
 
 export default Movies;
