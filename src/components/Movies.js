@@ -19,19 +19,20 @@ const Movies = () => {
       });
   }, []);
 
-  //   if (!movieArr) return null;
-
-  const movieCarts = movieArr.map((movie) => {
-    const { title, poster_path, overview } = movie;
-    <Cart
-      key={Math.random()}
-      src={IMG_URL + poster_path}
-      alt={title}
-      overview={overview}
-    />;
-  });
-
-  return movieCarts;
+  return (
+    <div>
+      {" "}
+      {movieArr.length > 0 &&
+        movieArr.map((movie) => (
+          <Cart
+            key={movie.id}
+            src={IMG_URL + movie.poster_path}
+            overview={movie.overview}
+            alt={movie.title}
+          />
+        ))}
+    </div>
+  );
 };
 
 export default Movies;
