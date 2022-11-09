@@ -34,18 +34,6 @@ main {
   font-weight: bold;
 }
 
-.movieInfo span.green {
-  color: lightgreen;
-}
-
-.movieInfo span.orange {
-  color: orange;
-}
-
-.movieInfo span.red {
-  color: red;
-}
-
 .overview {
   position: absolute;
   left: 0;

@@ -9,3 +9,15 @@ body {
   margin: 0;
   background-color: #22254b;
 }
+
+.colored.green {
+  color: green;
+}
+
+.colored.orange {
+  color: orange;
+}
+
+.colored.red {
+  color: red;
+}
