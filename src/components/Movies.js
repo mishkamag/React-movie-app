@@ -15,7 +15,6 @@ const Movies = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.results);
         setMovieArr(data.results);
       });
   }, []);

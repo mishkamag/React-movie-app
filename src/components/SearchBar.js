@@ -18,7 +18,6 @@ const SearchBar = (props) => {
       fetch(searchURL + "&query=" + searchMovieValue)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data.results);
           props.setMovieArr(data.results);
         });
     }
