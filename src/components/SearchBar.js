@@ -19,6 +19,7 @@ const SearchBar = (props) => {
         .then((res) => res.json())
         .then((data) => {
           props.setMovieArr(data.results);
+          searchMovieRef.current.value = "";
         });
     }
   };
