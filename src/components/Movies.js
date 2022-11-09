@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Card from "./Card";
 import Cart from "./Cart";
 
 const API_KEY = "api_key=2723edd8d09f41a378e963267ca9061b";
@@ -20,7 +21,7 @@ const Movies = () => {
   }, []);
 
   return (
-    <div>
+    <Card>
       {" "}
       {movieArr.length > 0 &&
         movieArr.map((movie) => (
@@ -32,7 +33,7 @@ const Movies = () => {
             vote_average={movie.vote_average}
           />
         ))}
-    </div>
+    </Card>
   );
 };
 

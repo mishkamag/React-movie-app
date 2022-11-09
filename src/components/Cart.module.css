@@ -5,7 +5,7 @@ main {
 }
 
 .movie {
-  width: 22%;
+  width: 300px;
   margin: 1rem;
   border: 3px;
   box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0, 1);
