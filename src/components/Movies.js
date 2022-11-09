@@ -29,6 +29,7 @@ const Movies = () => {
             src={IMG_URL + movie.poster_path}
             overview={movie.overview}
             alt={movie.title}
+            vote_average={movie.vote_average}
           />
         ))}
     </div>

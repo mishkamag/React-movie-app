@@ -7,7 +7,7 @@ const Cart = (props) => {
         <img src={props.src} alt={props.alt} />
         <div className={classes.movieInfo}>
           <h3>{props.alt}</h3>
-          <span className={classes.green}>9.8</span>
+          <span className={classes.green}>{props.vote_average}</span>
         </div>
         <div className={classes.overview}>
           <h3>Overview</h3>
