@@ -23,6 +23,7 @@ const Movies = () => {
   return (
     <Fragment>
       <SearchBar setMovieArr={setMovieArr} />
+
       <Card>
         {" "}
         {movieArr.length > 0 &&
