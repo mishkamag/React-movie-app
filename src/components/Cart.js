@@ -17,7 +17,7 @@ const Cart = (props) => {
         <img src={props.src} alt={props.alt} />
         <div className={classes.movieInfo}>
           <h3>{props.alt}</h3>
-          <span className={` ${getColor(props.vote_average)}`}>
+          <span className={getColor(props.vote_average)}>
             {props.vote_average}
           </span>
         </div>
