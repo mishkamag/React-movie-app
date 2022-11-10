@@ -1,8 +1,8 @@
 import { Fragment, useEffect, useState } from "react";
-import Card from "../components/Ui/Card";
-import Cart from "../components/Ui/Cart";
-import LoadingSpinner from "../components/Ui/LoadingSpinner";
-import SearchBar from "./SearchBar";
+import Card from "../Ui/Card";
+import Cart from "../Ui/Cart";
+import LoadingSpinner from "../Ui/LoadingSpinner";
+import SearchBar from "../SearchBar";
 
 const API_KEY = "api_key=2723edd8d09f41a378e963267ca9061b";
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -31,7 +31,6 @@ const Movies = () => {
         <LoadingSpinner />
       ) : (
         <Card>
-          {" "}
           {movieArr.length > 0 &&
             movieArr.map((movie) => (
               <Cart

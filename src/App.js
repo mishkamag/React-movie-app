@@ -1,11 +1,14 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Movies from "./components/Movies";
+import FavMovies from "./components/pages/FavMovies";
+import Movies from "./components/pages/Movies";
 
 function App() {
   return (
-    <div className="App">
-      <Movies />
-    </div>
+    <Routes>
+      <Route path="/" element={<Movies className="App" />} />
+      <Route path="/favorites" element={<FavMovies />} />
+    </Routes>
   );
 }
 
