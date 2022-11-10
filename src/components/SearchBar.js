@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import classes from "./SearchBar.module.css";
 
 const API_KEY = "api_key=2723edd8d09f41a378e963267ca9061b";
@@ -33,6 +34,11 @@ const SearchBar = (props) => {
           className={classes.search}
           ref={searchMovieRef}
         />
+        <ul>
+          <li>
+            <Link to="/favorites">favmovie</Link>
+          </li>
+        </ul>
       </form>
     </header>
   );
