@@ -1,4 +1,5 @@
 import classes from "./Cart.module.css";
+import { TfiHeart } from "react-icons/tfi";
 
 const Cart = (props) => {
   const getColor = (vote) => {
@@ -22,7 +23,9 @@ const Cart = (props) => {
           </span>
         </div>
         <div className={classes.overview}>
-          <h3>Overview</h3>
+          <h3>
+            Overview <TfiHeart className={classes.icon} size={32} />{" "}
+          </h3>
           {props.overview}
         </div>
       </div>

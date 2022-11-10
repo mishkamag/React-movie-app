@@ -50,3 +50,10 @@ main {
 .movie:hover .overview {
   transform: translateY(0);
 }
+
+.icon {
+  left: 88%;
+  position: absolute;
+  text-align: center;
+  top: 5%;
+}
