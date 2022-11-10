@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
-import Card from "./Card";
-import Cart from "./Cart";
-import LoadingSpinner from "./LoadingSpinner";
+import Card from "../components/Ui/Card";
+import Cart from "../components/Ui/Cart";
+import LoadingSpinner from "../components/Ui/LoadingSpinner";
 import SearchBar from "./SearchBar";
 
 const API_KEY = "api_key=2723edd8d09f41a378e963267ca9061b";
