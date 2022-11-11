@@ -2,7 +2,7 @@ import classes from "./Cart.module.css";
 import { TfiHeart } from "react-icons/tfi";
 
 const Cart = (props) => {
-  const getColor = (vote) => {
+  const voteColor = (vote) => {
     if (vote >= 8) {
       return "green";
     } else if (vote >= 6) {
@@ -18,13 +18,18 @@ const Cart = (props) => {
         <img src={props.src} alt={props.alt} />
         <div className={classes.movieInfo}>
           <h3>{props.alt}</h3>
-          <span className={`colored ${getColor(props.vote_average)}`}>
+          <span className={`colored ${voteColor(props.vote_average)}`}>
             {props.vote_average}
           </span>
         </div>
         <div className={classes.overview}>
           <h3>
-            Overview <TfiHeart className={classes.icon} size={32} />{" "}
+            Overview
+            <TfiHeart
+              onClick={() => props.addFavoriteMovieHandler(props.movie)}
+              className={classes.icon}
+              size={32}
+            />
           </h3>
           {props.overview}
         </div>

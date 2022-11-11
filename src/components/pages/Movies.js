@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import Card from "../Ui/Card";
 import Cart from "../Ui/Cart";
 import LoadingSpinner from "../Ui/LoadingSpinner";
-import SearchBar from "../SearchBar";
+import SearchBar from "../search/SearchBar";
 
 const API_KEY = "api_key=2723edd8d09f41a378e963267ca9061b";
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -12,6 +12,7 @@ const IMG_URL = "https://image.tmdb.org/t/p/w500";
 const Movies = () => {
   const [movieArr, setMovieArr] = useState([]);
   const [spinnerIsLoading, setSpinnerIsLoading] = useState(false);
+  const [favoriteMovies, setFavoriteMovies] = useState([]);
 
   useEffect(() => {
     setSpinnerIsLoading(true);
@@ -22,6 +23,11 @@ const Movies = () => {
         setSpinnerIsLoading(false);
       });
   }, []);
+
+  const addFavoriteMovieHandler = (movie) => {
+    const newFavoriteMoviesArr = [...favoriteMovies, movie];
+    setFavoriteMovies(newFavoriteMoviesArr);
+  };
 
   return (
     <Fragment>
@@ -39,6 +45,8 @@ const Movies = () => {
                 overview={movie.overview}
                 alt={movie.title}
                 vote_average={movie.vote_average}
+                addFavoriteMovieHandler={addFavoriteMovieHandler}
+                movie={movie}
               />
             ))}
         </Card>
