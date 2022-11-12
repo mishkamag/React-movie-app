@@ -24,6 +24,7 @@ function App() {
           />
         }
       />
+
       <Route
         path="/favorites"
         element={<FavMovies favoriteMovies={favoriteMovies} />}
