@@ -12,6 +12,7 @@ header {
   border-radius: 3rem;
   font-size: 1rem;
   color: #fff;
+  position: relative;
 }
 
 .search:focus {
@@ -21,4 +22,11 @@ header {
 
 .search::placeholder {
   color: #7378c5;
+}
+
+.searchIcon {
+  position: absolute; /*გასასწორებელია ცსს*/
+  right: 420px;
+  padding-top: 6px;
+  cursor: pointer;
 }

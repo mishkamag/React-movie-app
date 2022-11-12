@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { RiSearchLine } from "react-icons/ri";
 
 import classes from "./SearchBar.module.css";
 
@@ -28,12 +29,17 @@ const SearchBar = (props) => {
 
   return (
     <header>
-      <form onSubmit={submitDataHandler}>
+      <form>
         <input
           type="text"
           placeholder="Search"
           className={classes.search}
           ref={searchMovieRef}
+        />
+        <RiSearchLine
+          size={31}
+          className={classes.searchIcon}
+          onClick={submitDataHandler}
         />
         <ul>
           <li>
