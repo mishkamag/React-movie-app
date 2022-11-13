@@ -41,6 +41,7 @@ const Movies = (props) => {
                 vote_average={movie.vote_average}
                 addFavoriteMovieHandler={props.addFavoriteMovieHandler}
                 movie={movie}
+                icon={props.icon}
               />
             ))}
         </Card>

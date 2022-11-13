@@ -1,5 +1,6 @@
 import classes from "./Cart.module.css";
 import { TfiHeart } from "react-icons/tfi";
+import { ImHeart } from "react-icons/im";
 
 const Cart = (props) => {
   const voteColor = (vote) => {
@@ -11,6 +12,8 @@ const Cart = (props) => {
       return "red";
     }
   };
+
+  let MyIcon = props.icon ? TfiHeart : ImHeart;
 
   return (
     <main className={classes.main}>
@@ -25,7 +28,7 @@ const Cart = (props) => {
         <div className={classes.overview}>
           <h3>
             Overview
-            <TfiHeart
+            <MyIcon
               onClick={() => props.addFavoriteMovieHandler(props.movie)}
               className={classes.icon}
               size={32}
