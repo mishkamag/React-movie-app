@@ -8,9 +8,11 @@ function App() {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
 
   const addFavoriteMovieHandler = (movie) => {
-    const newFavoriteMoviesArr = [...favoriteMovies, movie];
-    setFavoriteMovies(newFavoriteMoviesArr);
-    console.log(favoriteMovies);
+    if (favoriteMovies.indexOf(movie.id === -1)) {
+      const newFavoriteMoviesArr = [...favoriteMovies, movie];
+      setFavoriteMovies(newFavoriteMoviesArr);
+      console.log(favoriteMovies);
+    }
   };
 
   return (
