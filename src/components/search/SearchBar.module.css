@@ -7,8 +7,7 @@ header {
 }
 
 .search,
-.favorites,
-.home {
+.favorites {
   background: transparent;
   border: 2px solid (#22254b);
   padding: 0.5rem 1rem;
@@ -18,8 +17,7 @@ header {
 }
 
 .search:focus,
-.favorites:focus,
-.home:focus {
+.favorites:focus {
   outline: 0;
   background-color: #22254b;
 }
@@ -35,7 +33,6 @@ header {
   padding-top: 7px;
 }
 
-.favorites,
-.home {
+.favorites {
   text-decoration: none;
 }

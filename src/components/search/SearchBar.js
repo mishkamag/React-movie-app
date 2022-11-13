@@ -30,9 +30,6 @@ const SearchBar = (props) => {
   return (
     <header>
       <form>
-        <Link className={classes.home} to="/">
-          Home
-        </Link>
         <Link className={classes.favorites} to="/favorites">
           Favorites
         </Link>
