@@ -30,6 +30,12 @@ const SearchBar = (props) => {
   return (
     <header>
       <form>
+        <Link className={classes.home} to="/">
+          Home
+        </Link>
+        <Link className={classes.favorites} to="/favorites">
+          Favorites
+        </Link>
         <input
           type="text"
           placeholder="Search"
@@ -41,11 +47,6 @@ const SearchBar = (props) => {
           className={classes.searchIcon}
           onClick={submitDataHandler}
         />
-        <ul>
-          <li>
-            <Link to="/favorites">favmovie</Link>
-          </li>
-        </ul>
       </form>
     </header>
   );
