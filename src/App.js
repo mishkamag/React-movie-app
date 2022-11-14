@@ -6,11 +6,10 @@ import Movies from "./components/pages/Movies";
 
 function App() {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
-  const [icon, setIcon] = useState(true);
+  const [active, setActive] = useState(true);
 
   const addFavoriteMovieHandler = (movie) => {
-    console.log(movie.id);
-    setIcon((prev) => !prev);
+    setActive((prev) => !prev);
     if (!Boolean(favoriteMovies.find((el) => el.id === movie.id))) {
       const newFavoriteMoviesArr = [...favoriteMovies, movie];
       setFavoriteMovies(newFavoriteMoviesArr);
@@ -26,7 +25,7 @@ function App() {
           <Movies
             className="App"
             addFavoriteMovieHandler={addFavoriteMovieHandler}
-            icon={icon}
+            active={active}
           />
         }
       />

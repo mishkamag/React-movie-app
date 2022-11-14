@@ -13,7 +13,7 @@ const Cart = (props) => {
     }
   };
 
-  let MyIcon = props.icon ? TfiHeart : ImHeart;
+  let MyIcon = props.active ? TfiHeart : ImHeart;
 
   return (
     <main className={classes.main}>
