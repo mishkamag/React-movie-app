@@ -9,13 +9,12 @@ function App() {
   const [icon, setIcon] = useState(true);
 
   const addFavoriteMovieHandler = (movie) => {
-    console.log(movie.id)
-    setIcon(false);
-    if (!Boolean(favoriteMovies.find((el) => el.id === movie.id)) ) {
+    console.log(movie.id);
+    setIcon((prev) => !prev);
+    if (!Boolean(favoriteMovies.find((el) => el.id === movie.id))) {
       const newFavoriteMoviesArr = [...favoriteMovies, movie];
       setFavoriteMovies(newFavoriteMoviesArr);
       console.log(favoriteMovies);
-      
     }
   };
 
