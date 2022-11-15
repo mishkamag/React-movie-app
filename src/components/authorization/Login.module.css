@@ -39,7 +39,7 @@
 .email input,
 .date input {
   font: inherit;
-  background-color: #f1e1fc;
+  background-color: white;
   color: #373b69;
   border-radius: 4px;
   border: 1px solid white;
