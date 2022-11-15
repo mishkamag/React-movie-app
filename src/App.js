@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Login from "./components/authorization/Login";
 import FavMovies from "./components/pages/FavMovies";
 import Movies from "./components/pages/Movies";
 
@@ -34,6 +35,8 @@ function App() {
         path="/favorites"
         element={<FavMovies favoriteMovies={favoriteMovies} />}
       />
+
+      <Route path="/log" element={<Login />} />
     </Routes>
   );
 }
