@@ -6,38 +6,48 @@ import { useFormik } from "formik";
 const Login = () => {
   const navigate = useNavigate();
 
+  const initialValues = {
+    name: "",
+    email: "",
+    date: "",
+  };
+
+  const onSubmit = (values) => {
+    navigate("/");
+    console.log(values);
+  };
+
+  const validate = (values) => {
+    let errors = {};
+
+    if (!values.name) {
+      errors.name = "Required";
+    } else if (values.name.length < 6) {
+      errors.name = "Name cannot be less than 6";
+    }
+
+    if (!values.email) {
+      errors.email = "Required";
+    } else if (
+      !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+        values.email
+      )
+    ) {
+      errors.email = "Invalid email format";
+    }
+
+    if (!values.date) {
+      errors.date = "Required";
+    }
+    return errors;
+  };
+
   const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      date: "",
-    },
-    onSubmit: (values) => {
-      navigate("/");
-      console.log(values);
-    },
-    validate: (values) => {
-      let errors = {};
-
-      if (!values.name) {
-        errors.name = "Required";
-      }
-
-      if (!values.email) {
-        errors.email = "Required";
-      } else if (
-        !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-          values.email
-        )
-      ) {
-        errors.email = "Invalid email format";
-      }
-
-      if (!values.date) {
-        errors.name = "Required";
-      }
-    },
+    initialValues,
+    onSubmit,
+    validate,
   });
+  console.log(formik.errors);
 
   return (
     <Fragment>
@@ -53,6 +63,9 @@ const Login = () => {
               onChange={formik.handleChange}
               value={formik.values.name}
             />
+            {formik.errors.name ? (
+              <div className={classes.error}>{formik.errors.name}</div>
+            ) : null}
           </div>
 
           <div className={classes.email}>
@@ -64,6 +77,9 @@ const Login = () => {
               onChange={formik.handleChange}
               value={formik.values.email}
             />
+            {formik.errors.email ? (
+              <div className={classes.error}>{formik.errors.email}</div>
+            ) : null}
           </div>
 
           <div className={classes.date}>
@@ -75,6 +91,9 @@ const Login = () => {
               onChange={formik.handleChange}
               value={formik.values.date}
             />
+            {formik.errors.date ? (
+              <div className={classes.error}>{formik.errors.date}</div>
+            ) : null}
           </div>
 
           <button type="submit" className={classes.button}>

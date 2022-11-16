@@ -1,5 +1,5 @@
 .login {
-  margin: 5rem auto;
+  margin: 3.5rem auto;
   width: 95%;
   max-width: 25rem;
   border-radius: 6px;
@@ -61,4 +61,10 @@
 .button:hover {
   background-color: #22254b;
   border-color: #22254b;
+}
+
+.error {
+  color: red;
+  margin-top: 0.7rem;
+  font-style: italic;
 }
