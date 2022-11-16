@@ -61,9 +61,10 @@ const Login = () => {
               id="name"
               name="name"
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.name}
             />
-            {formik.errors.name ? (
+            {formik.touched.name && formik.errors.name ? (
               <div className={classes.error}>{formik.errors.name}</div>
             ) : null}
           </div>
@@ -75,9 +76,10 @@ const Login = () => {
               id="email"
               name="email"
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.email}
             />
-            {formik.errors.email ? (
+            {formik.touched.email && formik.errors.email ? (
               <div className={classes.error}>{formik.errors.email}</div>
             ) : null}
           </div>
@@ -89,9 +91,10 @@ const Login = () => {
               id="date"
               name="date"
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.date}
             />
-            {formik.errors.date ? (
+            {formik.touched.date && formik.errors.date ? (
               <div className={classes.error}>{formik.errors.date}</div>
             ) : null}
           </div>
