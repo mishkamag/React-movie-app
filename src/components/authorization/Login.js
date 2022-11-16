@@ -16,12 +16,28 @@ const Login = () => {
       navigate("/");
       console.log(values);
     },
-  });
+    validate: (values) => {
+      let errors = {};
 
-  // const loginSubmitHandler = (event) => {
-  //   event.preventDefault();
-  //   navigate("/");
-  // };
+      if (!values.name) {
+        errors.name = "Required";
+      }
+
+      if (!values.email) {
+        errors.email = "Required";
+      } else if (
+        !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+          values.email
+        )
+      ) {
+        errors.email = "Invalid email format";
+      }
+
+      if (!values.date) {
+        errors.name = "Required";
+      }
+    },
+  });
 
   return (
     <Fragment>
