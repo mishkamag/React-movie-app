@@ -14,7 +14,6 @@ const Login = () => {
 
   const onSubmit = (values) => {
     navigate("/");
-    console.log(values);
   };
 
   const validate = (values) => {
@@ -38,6 +37,8 @@ const Login = () => {
 
     if (!values.date) {
       errors.date = "Required";
+    } else if (calcAge < 18) {
+      errors.date = "you must be 18+";
     }
     return errors;
   };
@@ -47,7 +48,10 @@ const Login = () => {
     onSubmit,
     validate,
   });
-  console.log(formik.errors);
+
+  const inputDate = new Date(formik.values.date);
+  const realAge = new Date() - inputDate;
+  const calcAge = Math.floor(realAge / (1000 * 60 * 60 * 24 * 365.25));
 
   return (
     <Fragment>
