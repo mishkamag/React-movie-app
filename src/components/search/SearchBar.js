@@ -11,8 +11,7 @@ const searchURL = BASE_URL + "/search/movie?" + API_KEY;
 const SearchBar = (props) => {
   const searchMovieRef = useRef();
 
-  const submitDataHandler = (event) => {
-    event.preventDefault();
+  const clickDataHandler = (event) => {
     const searchMovieValue = searchMovieRef.current.value;
 
     if (!searchMovieValue) {
@@ -29,22 +28,20 @@ const SearchBar = (props) => {
 
   return (
     <header>
-      <form>
-        <Link className={classes.favorites} to="/favorites">
-          Favorites
-        </Link>
-        <input
-          type="text"
-          placeholder="Search"
-          className={classes.search}
-          ref={searchMovieRef}
-        />
-        <RiSearchLine
-          size={31}
-          className={classes.searchIcon}
-          onClick={submitDataHandler}
-        />
-      </form>
+      <Link className={classes.favorites} to="/favorites">
+        Favorites
+      </Link>
+      <input
+        type="text"
+        placeholder="Search"
+        className={classes.search}
+        ref={searchMovieRef}
+      />
+      <RiSearchLine
+        size={31}
+        className={classes.searchIcon}
+        onClick={clickDataHandler}
+      />
     </header>
   );
 };
