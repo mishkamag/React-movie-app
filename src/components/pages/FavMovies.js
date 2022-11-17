@@ -10,7 +10,7 @@ const FavMovies = (props) => {
 
   return (
     <Fragment>
-      <Link to="/" className={classes.home}>
+      <Link to="/movies" className={classes.home}>
         Home
       </Link>
       <Card>
