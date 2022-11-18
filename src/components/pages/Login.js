@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Login.module.css";
 import { useFormik } from "formik";
+import walter from "../../assets/walter.jpg";
 // import useSound from "use-sound";
 // import blue from "../../assets/blue.mp3";
 
@@ -62,6 +63,7 @@ const Login = () => {
   return (
     <Fragment>
       <div className={classes.site}>ADJARANET</div>
+      <img src={walter} alt="walter" className={classes.img} />
       <section className={classes.login}>
         <form onSubmit={formik.handleSubmit}>
           <div className={classes.name}>
