@@ -11,7 +11,7 @@ const searchURL = BASE_URL + "/search/movie?" + API_KEY;
 const SearchBar = (props) => {
   const searchMovieRef = useRef();
 
-  const clickDataHandler = (event) => {
+  const clickDataHandler = () => {
     const searchMovieValue = searchMovieRef.current.value;
 
     if (!searchMovieValue) {

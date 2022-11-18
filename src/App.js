@@ -7,14 +7,12 @@ import Movies from "./components/pages/Movies";
 
 function App() {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
-  const [id, setId] = useState(null);
+
   const [active, setActive] = useState(true);
 
   const addFavoriteMovieHandler = (movie) => {
     setActive((prev) => !prev);
     if (!Boolean(favoriteMovies.find((el) => el.id === movie.id))) {
-      setId(movie.id);
-      console.log(id);
       const newFavoriteMoviesArr = [...favoriteMovies, movie];
       setFavoriteMovies(newFavoriteMoviesArr);
       console.log(favoriteMovies);
