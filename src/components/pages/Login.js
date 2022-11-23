@@ -3,13 +3,9 @@ import { useNavigate } from "react-router-dom";
 import classes from "./Login.module.css";
 import { useFormik } from "formik";
 import walter from "../../assets/walter.jpg";
-// import useSound from "use-sound";
-// import blue from "../../assets/blue.mp3";
 
 const Login = () => {
   const navigate = useNavigate();
-
-  // const [blueSound] = useSound(blue);
 
   const initialValues = {
     name: "",
@@ -19,8 +15,6 @@ const Login = () => {
 
   const onSubmit = (values) => {
     navigate("/movies");
-
-    // blueSound();
   };
 
   const validate = (values) => {

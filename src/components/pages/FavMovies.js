@@ -1,5 +1,6 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
+import FavoriteContext from "../../store/FavoriteContext";
 import Card from "../Ui/Card";
 import Cart from "../Ui/Cart";
 import classes from "./FavMovies.module.css";
@@ -8,7 +9,7 @@ const IMG_URL = "https://image.tmdb.org/t/p/w500";
 // import { ImHeart } from "react-icons/im";
 
 const FavMovies = (props) => {
-  const { favoriteMovies } = props;
+  const ctx = useContext(FavoriteContext);
 
   return (
     <Fragment>
@@ -16,7 +17,7 @@ const FavMovies = (props) => {
         Home
       </Link>
       <Card>
-        {favoriteMovies.map((movie) => (
+        {ctx.favMovieList.map((movie) => (
           <Cart
             id={movie.id}
             key={movie.id}

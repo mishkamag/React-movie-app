@@ -39,9 +39,7 @@ const Movies = (props) => {
                 overview={movie.overview}
                 alt={movie.title}
                 vote_average={movie.vote_average}
-                addFavoriteMovieHandler={props.addFavoriteMovieHandler}
                 movie={movie}
-                active={props.active}
               />
             ))}
         </Card>

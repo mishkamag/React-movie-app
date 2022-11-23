@@ -1,8 +1,12 @@
 import classes from "./Cart.module.css";
 import { TfiHeart } from "react-icons/tfi";
 import { ImHeart } from "react-icons/im";
+import { useContext } from "react";
+import FavoriteContext from "../../store/FavoriteContext";
 
 const Cart = (props) => {
+  const ctx = useContext(FavoriteContext);
+
   const voteColor = (vote) => {
     if (vote >= 8) {
       return "green";
@@ -29,7 +33,7 @@ const Cart = (props) => {
           <h3>
             Overview
             <MyIcon
-              onClick={() => props.addFavoriteMovieHandler(props.movie)}
+              onClick={() => ctx.addToFavorite(props.movie)}
               className={classes.icon}
               size={32}
             />
