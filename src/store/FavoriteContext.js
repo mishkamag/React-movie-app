@@ -11,22 +11,18 @@ export const FavoriteCtxProvider = (props) => {
   const [favMovieList, setFavMovieList] = useState([]);
 
   const addToFavorite = (movie) => {
-    setFavMovieList((prevMovie) => {
-      const existMovieId = prevMovie.find((mov) => mov.id === movie.id);
-      if (existMovieId) {
-        alert("Movie already in Favs");
-        return [...prevMovie];
-      } else if (prevMovie) {
-        return [...prevMovie, movie];
+    setFavMovieList((prevMovies) => {
+      if (prevMovies) {
+        return [...prevMovies, movie];
       } else {
-        return;
+        return [movie];
       }
     });
   };
 
-  const removeFromFavorite = (movie) => {
+  const removeFromFavorite = (id) => {
     setFavMovieList((prevMovies) => {
-      return prevMovies.filter((prev) => prev.id !== movie.id);
+      return prevMovies.filter((prevmovie) => prevmovie.id !== id);
     });
   };
 
